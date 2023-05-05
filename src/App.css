@@ -1,0 +1,17 @@
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo{
+    color: brown;
+}
+.btn{
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    background-color: blueviolet;
+    color: yellow;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
