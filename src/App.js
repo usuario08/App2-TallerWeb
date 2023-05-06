@@ -4,26 +4,28 @@ import './App.css';
 
 function App() {
 
-    const [tareas, setTareas] = useState([
-        'Realizar compras',
-        'Lavar ropa',
-        'Cocinar',
-        'Sacar al perro al parque',
-        'Asistir a las clases de Taller Web'
-    ]);
-    const [titulo, setTitulo] = useState('Lista de Tareas');
-    const [contador, setContador] = useState(0);
+    const [nuevaTarea, setNuevaTarea] = useState('');
 
-    const CambiarTitulo = () => {
-        setTitulo('Nuevo Titulo ' + contador);
-        setContador(contador + 1);
+    const [tareas, setTareas] = useState([]);
+
+    const EliminarTarea = () => {
+        tareas.shift();
+        setTareas([...tareas]);
+    }
+
+    const AgregarTarea = () => {
+        tareas.push({id: tareas.length + 1, tarea: nuevaTarea})
+        setTareas([...tareas])
+        setNuevaTarea('');
     }
 
     return (
         <div className='app'>
-            <h1 className='titulo'>{titulo}</h1>
+            <input onChange={e => setNuevaTarea(e.target.value)} value={nuevaTarea}/>
+            <button onClick={AgregarTarea}>Agregar Tarea</button>
+            <h1 className='titulo'>Lista de Tareas</h1>
             <ListaTareas tareas={tareas} />
-            <button onClick={CambiarTitulo} className='btn'> Cambiar Titulo</button>
+            <button onClick={EliminarTarea} className='btn'>Eliminar Tarea</button>
         </div>
     );
 }

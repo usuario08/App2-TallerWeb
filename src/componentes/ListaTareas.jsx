@@ -6,14 +6,14 @@ function ListaTareas({ tareas = [] }) {
             border: '1px',
             padding: '20px',
             borderRadius: '8px',
-            backgroundColor: 'red'
+            backgroundColor: '#2C3E50'
         }}>
             {
                 tareas.map((elemento, index) => (
                     <Tarea
                         key={index}
-                        indice={index}
-                        tarea={elemento}
+                        indice={elemento.id}
+                        tarea={elemento.tarea}
                     />
                 ))
             }

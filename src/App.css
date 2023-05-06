@@ -4,14 +4,15 @@
     align-items: center;
 }
 .titulo{
-    color: brown;
+    color: #2C3E50;
 }
 .btn{
     margin-top: 10px;
     padding: 5px 10px 5px 10px;
-    background-color: blueviolet;
-    color: yellow;
+    background-color: #FFA500;
+    color: #2C3E50;
     border: 0px;
     border-radius: 5px;
     font-size: 1rem;
+    cursor: pointer;
 }
